@@ -1,7 +1,7 @@
 {
   "name": "supersimpledev",
   "version": "3.0.5",
-  "description": "External libraries used in SuperSimpleDev coding tutorials (https://www.youtube.com/@SuperSimpleDev).",
+  "description": "External libraries used in SuperSimpleDev coding tutorials (https://youtube.com/@SuperSimpleDev).",
   "main": "hello.js",
   "repository": {
     "type": "git",
@@ -13,5 +13,5 @@
   "bugs": {
     "url": "https://github.com/SuperSimpleDev/external-libraries/issues"
   },
-  "homepage": "https://www.youtube.com/@SuperSimpleDev"
+  "homepage": "https://youtube.com/@SuperSimpleDev"
 }
