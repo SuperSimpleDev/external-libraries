@@ -16,8 +16,6 @@
   (global = global || self, factory(global.React = {}));
 }(this, (function (exports) { 'use strict';
 
-  var ReactVersion = '19.0.0';
-
   // ATTENTION
   // When adding new symbols to this file,
   // Please consider also adding to 'react-devtools-shared/src/backend/ReactSymbols'
@@ -3305,6 +3303,8 @@
     toArray: toArray,
     only: onlyChild
   };
+
+  var ReactVersion = '19.0.0';
 
   exports.Children = Children;
   exports.Component = Component;
