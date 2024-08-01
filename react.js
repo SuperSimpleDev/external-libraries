@@ -9,6 +9,7 @@
  *
  * This source code is licensed under the MIT license found
  * at the bottom of this file.
+ *
  */
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
