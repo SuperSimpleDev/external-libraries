@@ -1,6 +1,6 @@
 {
   "name": "supersimpledev",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "External libraries used in SuperSimpleDev coding tutorials (https://www.youtube.com/@SuperSimpleDev).",
   "main": "hello.js",
   "repository": {
