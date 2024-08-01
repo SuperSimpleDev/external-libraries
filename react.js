@@ -1,5 +1,5 @@
 // This is a special version of React used for SuperSimpleDev
-// coding tutorials https://youtube.com/@superSimpleDev
+// coding tutorials: https://youtube.com/@superSimpleDev
 
 /**
  * @license React
