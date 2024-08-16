@@ -1,4 +1,4 @@
-// This is a special version of React DOM used for SuperSimpleDev
+// This is a special version of ReactDOM used for SuperSimpleDev
 // coding tutorials: https://youtube.com/@SuperSimpleDev
 
 /**
