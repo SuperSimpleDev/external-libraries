@@ -3,7 +3,7 @@
 
 const chatbot = {
   defaultResponses: {
-    'hello hi': 'Hello! How can I help you?',
+    'hello hi': `Hello! Currently, I can get today's date, flip a coin, or roll a dice. How can I help you?`,
     'how are you': `I'm doing great! How can I help you?`,
     'flip a coin': function () {
       const randomNumber = Math.random();
