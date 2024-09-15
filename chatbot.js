@@ -3,7 +3,7 @@
 
 const chatbot = {
   defaultResponses: {
-    'hello hi': `Hello! How can I help you?`,
+    'hello hi': 'Hello! How can I help you?',
     'how are you': `I'm doing great! How can I help you?`,
     'flip a coin': function () {
       const randomNumber = Math.random();
@@ -28,7 +28,7 @@ const chatbot = {
 
       return `Today is ${month} ${day}`;
     },
-    'thank you thanks': 'No problem! Let me know if you need help with anything else!',
+    'thank': 'No problem! Let me know if you need help with anything else!',
   },
 
   additionalResponses: {},
@@ -52,7 +52,7 @@ const chatbot = {
     } = this.stringSimilarity(message, Object.keys(responses));
 
     const bestResponseRating = ratings[bestMatchIndex].rating;
-    if (bestResponseRating < 0.25) {
+    if (bestResponseRating <= 0.3) {
       return this.unsuccessfulResponse;
     }
 
