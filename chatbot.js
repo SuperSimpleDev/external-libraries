@@ -36,7 +36,10 @@ const chatbot = {
   unsuccessfulResponse: `Sorry, I didn't quite understand that. Currently, I only know how to flip a coin, roll a dice, or get today's date. Let me know how I can help!`,
 
   addResponses: function (additionalResponses) {
-    this.additionalResponses = additionalResponses;
+    this.additionalResponses = {
+      ...this.additionalResponses,
+      ...additionalResponses
+    };
   },
 
   getResponse: function (message) {
