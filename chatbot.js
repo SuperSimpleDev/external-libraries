@@ -43,7 +43,7 @@ const chatbot = {
   },
 
   getResponse: function (message) {
-    function getResponseSync(message) {
+    const getResponseSync = (message) => {
       // This spread operator (...) combines the 2 objects.
       const responses = {
         ...this.defaultResponses,
