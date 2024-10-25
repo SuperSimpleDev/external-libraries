@@ -42,8 +42,8 @@ const chatbot = {
     };
   },
 
-  getResponseAsync: function (message) {
-    function getResponse(message) {
+  getResponse: function (message) {
+    function getResponseSync(message) {
       // This spread operator (...) combines the 2 objects.
       const responses = {
         ...this.defaultResponses,
@@ -73,7 +73,7 @@ const chatbot = {
     return new Promise((resolve) => {
       // Pretend it takes some time for the chatbot to response.
       setTimeout(() => {
-        resolve(getResponse(message));
+        resolve(getResponseSync(message));
       }, 1000);
     });
   },
