@@ -43,37 +43,37 @@ const chatbot = {
   },
 
   getResponse: function (message) {
-    const getResponseSync = (message) => {
-      // This spread operator (...) combines the 2 objects.
-      const responses = {
-        ...this.defaultResponses,
-        ...this.additionalResponses,
-      };
+    // This spread operator (...) combines the 2 objects.
+    const responses = {
+      ...this.defaultResponses,
+      ...this.additionalResponses,
+    };
 
-      const {
-        ratings,
-        bestMatchIndex,
-      } = this.stringSimilarity(message, Object.keys(responses));
+    const {
+      ratings,
+      bestMatchIndex,
+    } = this.stringSimilarity(message, Object.keys(responses));
 
-      const bestResponseRating = ratings[bestMatchIndex].rating;
-      if (bestResponseRating <= 0.3) {
-        return this.unsuccessfulResponse;
-      }
-
-      const bestResponseKey = ratings[bestMatchIndex].target;
-      const response = responses[bestResponseKey];
-
-      if (typeof response === 'function') {
-        return response();
-      } else {
-        return response;
-      }
+    const bestResponseRating = ratings[bestMatchIndex].rating;
+    if (bestResponseRating <= 0.3) {
+      return this.unsuccessfulResponse;
     }
 
+    const bestResponseKey = ratings[bestMatchIndex].target;
+    const response = responses[bestResponseKey];
+
+    if (typeof response === 'function') {
+      return response();
+    } else {
+      return response;
+    }
+  },
+
+  getResponseAsync: function (message) {
     return new Promise((resolve) => {
       // Pretend it takes some time for the chatbot to response.
       setTimeout(() => {
-        resolve(getResponseSync(message));
+        resolve(this.getResponse(message));
       }, 1000);
     });
   },
