@@ -1,7 +1,7 @@
 // This is a simple chatbot used for SuperSimpleDev
 // coding tutorials: https://youtube.com/@SuperSimpleDev
 
-const chatbot = {
+const Chatbot = {
   defaultResponses: {
     'hello hi': `Hello! How can I help you?`,
     'how are you': `I'm doing great! How can I help you?`,
@@ -130,5 +130,5 @@ const chatbot = {
   },
 };
 
-window.Chatbot = chatbot;
-window.chatbot = chatbot;
+window.Chatbot = Chatbot;
+window.chatbot = Chatbot;
