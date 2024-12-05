@@ -130,5 +130,19 @@ const Chatbot = {
   },
 };
 
-window.Chatbot = Chatbot;
-window.chatbot = Chatbot;
+// This code allows Chatbot to be used in both the browser and
+// in NodeJS. This is called UMD (Universal Module Definition).
+(function (root, factory) {
+  if (typeof define === 'function' && define.amd) {
+    // AMD
+    define([], factory);
+  } else if (typeof module === 'object' && module.exports) {
+    // Node/CommonJS
+    module.exports = factory();
+  } else {
+    // Browser global
+    root.Chatbot = factory();
+  }
+}(typeof self !== 'undefined' ? self : this, function () {
+  return Chatbot;
+}));
