@@ -2,7 +2,7 @@
   "name": "supersimpledev",
   "version": "8.1.0",
   "description": "External libraries used in SuperSimpleDev coding tutorials (https://youtube.com/@SuperSimpleDev).",
-  "main": "hello.js",
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/SuperSimpleDev/external-libraries.git"

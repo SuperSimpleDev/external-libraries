@@ -142,6 +142,7 @@ const Chatbot = {
   } else {
     // Browser global
     root.Chatbot = factory();
+    root.chatbot = factory();
   }
 }(typeof self !== 'undefined' ? self : this, function () {
   return Chatbot;
