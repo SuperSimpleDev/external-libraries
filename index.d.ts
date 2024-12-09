@@ -1,4 +1,4 @@
-declare module 'index' {
+declare module 'supersimpledev' {
   interface Chatbot {
     addResponses(
       additionalResponses: Record<
