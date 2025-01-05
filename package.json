@@ -13,5 +13,8 @@
   "bugs": {
     "url": "https://github.com/SuperSimpleDev/external-libraries/issues"
   },
-  "homepage": "https://youtube.com/@SuperSimpleDev"
+  "homepage": "https://youtube.com/@SuperSimpleDev",
+  "bin": {
+    "supersimpledev": "./bin/supersimpledev.js"
+  }
 }

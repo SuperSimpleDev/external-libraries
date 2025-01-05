@@ -35,6 +35,8 @@ const Chatbot = {
 
   unsuccessfulResponse: `Sorry, I didn't quite understand that. Currently, I only know how to flip a coin, roll a dice, or get today's date. Let me know how I can help!`,
 
+  emptyMessageResponse: `Sorry, it looks like your message is empty. Please make sure you send a message and I will give you a response.`,
+
   addResponses: function (additionalResponses) {
     this.additionalResponses = {
       ...this.additionalResponses,
@@ -43,6 +45,10 @@ const Chatbot = {
   },
 
   getResponse: function (message) {
+    if (!message) {
+      return this.emptyMessageResponse;
+    }
+
     // This spread operator (...) combines the 2 objects.
     const responses = {
       ...this.defaultResponses,
