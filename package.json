@@ -1,6 +1,6 @@
 {
   "name": "supersimpledev",
-  "version": "8.4.0",
+  "version": "8.5.0",
   "description": "External libraries used in SuperSimpleDev coding tutorials (https://youtube.com/@SuperSimpleDev).",
   "main": "index.js",
   "repository": {
