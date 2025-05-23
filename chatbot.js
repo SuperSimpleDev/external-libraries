@@ -136,7 +136,7 @@ const Chatbot = {
   },
 };
 
-// Used to override crypto.randomUUID() if it doesn't exist.
+// Define the randomUUID() function if it doesn't exist.
 function uuidPolyfill() {
   return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (char) {
     const randomNumber = Math.random() * 16 | 0;
