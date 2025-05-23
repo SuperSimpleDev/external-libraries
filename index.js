@@ -11,9 +11,18 @@ function uuidPolyfill() {
 
 // In the browser.
 if (typeof window !== 'undefined') {
+  // Create a fallback if window.crypto is undefined.
+  if (typeof window.crypto === 'undefined') {
+    try {
+      window.crypto = {};
+    } catch (e) {}
+  }
+
   // Create a fallback if crypto.randomUUID() doesn't exist.
   if (window.crypto && typeof window.crypto.randomUUID !== 'function') {
-    window.crypto.randomUUID = uuidPolyfill;
+    try {
+      window.crypto.randomUUID = uuidPolyfill;
+    } catch (e) {}
   }
 }
 

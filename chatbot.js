@@ -155,9 +155,18 @@ function uuidPolyfill() {
     // Node/CommonJS
     module.exports = factory();
   } else {
+    // Create a fallback if window.crypto is undefined.
+    if (typeof root.crypto === 'undefined') {
+      try {
+        root.crypto = {};
+      } catch (e) {}
+    }
+
     // Create a fallback crypto.randomUUID() function.
     if (root.crypto && typeof root.crypto.randomUUID !== 'function') {
-      root.crypto.randomUUID = uuidPolyfill;
+      try {
+        root.crypto.randomUUID = uuidPolyfill;
+      } catch (e) {}
     }
 
     // Browser global
