@@ -136,6 +136,15 @@ const Chatbot = {
   },
 };
 
+// Used to override crypto.randomUUID() if it doesn't exist.
+function uuidPolyfill() {
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (char) {
+    const randomNumber = Math.random() * 16 | 0;
+    const result = char === 'x' ? randomNumber : (randomNumber & 0x3 | 0x8);
+    return result.toString(16);
+  });
+}
+
 // This code allows Chatbot to be used in both the browser and
 // in NodeJS. This is called UMD (Universal Module Definition).
 (function (root, factory) {
@@ -146,6 +155,11 @@ const Chatbot = {
     // Node/CommonJS
     module.exports = factory();
   } else {
+    // Create a fallback crypto.randomUUID() function.
+    if (root.crypto && typeof root.crypto.randomUUID !== 'function') {
+      root.crypto.randomUUID = uuidPolyfill;
+    }
+
     // Browser global
     root.Chatbot = factory();
     root.chatbot = factory();
