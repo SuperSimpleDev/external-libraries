@@ -3368,8 +3368,12 @@ if (typeof window !== 'undefined') {
   if (window.crypto && typeof window.crypto.randomUUID !== 'function') {
     try {
       window.crypto.randomUUID = uuidPolyfill;
-      
-      // This is just for testing purposes, to see if the polyfill worked.
+    } catch (e) {}
+  }
+
+  // This is just for testing purposes, to see if the polyfill worked.
+  if (window.crypto) {
+    try {
       window.crypto.randomUUID2 = uuidPolyfill;
     } catch (e) {}
   }
